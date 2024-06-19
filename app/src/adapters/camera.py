@@ -7,8 +7,8 @@ class Camera:
 
     def read_frame(self):
         ret, frame = self.cam.read()
-        self.__beautify_frame(frame)
-        return ret, frame
+        rgb_frame = self.__beautify_frame(frame)
+        return ret, rgb_frame
 
     def __beautify_frame(self, frame):
         return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
