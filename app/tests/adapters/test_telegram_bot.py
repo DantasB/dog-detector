@@ -1,6 +1,7 @@
 from unittest.mock import MagicMock
 from app.src.adapters.telegram_bot import TelegramBot
 
+
 def test_send_image():
     mock_bot = MagicMock(spec=TelegramBot)
 

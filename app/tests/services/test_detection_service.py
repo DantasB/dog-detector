@@ -2,6 +2,7 @@ import pytest
 from unittest.mock import MagicMock
 from app.src.services.detection_service import DetectionService
 
+
 def test_process_frame(mocker):
     mock_dog_detector = MagicMock()
     mock_bot = MagicMock()

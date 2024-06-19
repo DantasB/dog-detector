@@ -4,11 +4,13 @@ import os
 from app.src.adapters.yolov8_dog_detector import YOLOv8DogDetector
 from ultralytics.engine.results import Results
 
+
 @pytest.fixture
 def yolov8_dog_detector(mocker):
     detector = YOLOv8DogDetector("models/yolov8n.pt")
     detector.model = mocker.MagicMock()
     return detector
+
 
 def test_dog_was_detected(yolov8_dog_detector, mocker):
     # Load the image
