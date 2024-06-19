@@ -1,3 +1,4 @@
+import datetime
 from ultralytics import YOLO
 from ultralytics.utils.plotting import Annotator
 from ..domain.dog_detector import DogDetector
@@ -27,7 +28,7 @@ class YOLOv8DogDetector(DogDetector):
                 b = box.xyxy[0]
                 c = box.cls
                 if self.model.names[int(c)] == self.DOGLABEL:
-                    print("Dog detected")
+                    print(f"[INFO - {datetime.datetime.now()}] Bit detected!")
                     annotator.box_label(b, "Bit")
                     detected = True
         frame = annotator.result()
