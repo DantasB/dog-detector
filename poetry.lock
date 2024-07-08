@@ -341,6 +341,23 @@ files = [
 test = ["pytest (>=6)"]
 
 [[package]]
+name = "ffmpeg-downloader"
+version = "0.3.0"
+description = "FFmpeg Release Build Downloader"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "ffmpeg_downloader-0.3.0-py3-none-any.whl", hash = "sha256:4661f3cd961326c00c3425684c733e7e9b286173a5aa6986884b4e231b3b738f"},
+    {file = "ffmpeg_downloader-0.3.0.tar.gz", hash = "sha256:b1f9d1fccfe6c492678adacd1f82d566273a751faf1427501dadd6b89a401bd1"},
+]
+
+[package.dependencies]
+packaging = "*"
+platformdirs = "*"
+requests = "*"
+tqdm = ">=4.40.0"
+
+[[package]]
 name = "ffmpeg-python"
 version = "0.2.0"
 description = "Python bindings for FFmpeg - with complex filtering support"
@@ -1347,6 +1364,17 @@ files = [
 ]
 
 [[package]]
+name = "pydub"
+version = "0.25.1"
+description = "Manipulate audio with an simple and easy high level interface"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pydub-0.25.1-py2.py3-none-any.whl", hash = "sha256:65617e33033874b59d87db603aa1ed450633288aefead953b30bded59cb599a6"},
+    {file = "pydub-0.25.1.tar.gz", hash = "sha256:980a33ce9949cab2a569606b65674d748ecbca4f0796887fd6f46173a7b0d30f"},
+]
+
+[[package]]
 name = "pygame"
 version = "2.5.2"
 description = "Python Game Development"
@@ -1978,4 +2006,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "a30e318c6d388ea0d818b3d804bbc1f1f4f9f95f7495c0a7ecdb30bfa00bb961"
+content-hash = "465dbe0356e8df2105fb66f6e25a706d2b03cb9d51e079b6a6f67ef33ab1da49"

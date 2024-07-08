@@ -1,4 +1,5 @@
 import threading
+import time
 from src.services.detection_service import DetectionService
 from src.adapters.yolov8_dog_detector import YOLOv8DogDetector
 from src.adapters.telegram_bot import TelegramBot
@@ -11,6 +12,14 @@ if __name__ == "__main__":
     camera = Camera()
     LIMITER = 30
     frame_counter = 0
+    send_interval = 30
+    last_sent_time = 0
+
+    def send_image_periodically(frame):
+        global last_sent_time
+        if time.time() - last_sent_time >= send_interval:
+            threading.Thread(target=detection_service.process_frame, args=(frame,)).start()
+            last_sent_time = time.time()
 
     try:
         while True:
@@ -18,9 +27,7 @@ if __name__ == "__main__":
             frame_counter += 1
 
             if frame_counter % LIMITER == 0:
-                threading.Thread(
-                    target=detection_service.process_frame, args=(frame,)
-                ).start()
+                send_image_periodically(frame)
 
             show_frame(frame)
 
