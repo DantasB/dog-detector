@@ -12,5 +12,5 @@ class DetectionService:
             self.play_sound()
 
     def play_sound(self):
-        song = pydub.AudioSegment.from_mp3("audios/bark.mp3")
+        song = pydub.AudioSegment.from_mp3("/Users/bdantas/Documents/programming/learning/dog-detector/app/audios/bark.mp3")
         play(song)

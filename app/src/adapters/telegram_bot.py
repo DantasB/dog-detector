@@ -2,7 +2,9 @@ import io
 import os
 import telebot
 from PIL import Image
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class TelegramBot:
     def __init__(self):
